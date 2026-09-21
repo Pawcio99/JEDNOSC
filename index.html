@@ -412,16 +412,125 @@ blockquote.gold p{color:#d4c898;}
 
   <div class="viz-wrap">
     <div class="viz-head">Mechanizm czerpania wody — jedna całość, nie cztery przedmioty</div>
-    <div class="viz-body">
-      <svg class="viz-svg" viewBox="0 0 700 240" height="240">
-        <circle cx="350" cy="70" r="46" fill="none" stroke="#9b84e8" stroke-width="2.5"/>
-        <text x="350" y="30" text-anchor="middle" fill="#9b84e8" font-size="11" font-family="JetBrains Mono, monospace">galgal · koło</text>
-        <line x1="350" y1="116" x2="350" y2="180" stroke="#d4a854" stroke-width="2" stroke-dasharray="2,3"/>
-        <text x="390" y="150" fill="#d4a854" font-size="11" font-family="JetBrains Mono, monospace">chewel · sznur</text>
-        <ellipse cx="350" cy="195" rx="34" ry="20" fill="none" stroke="#eed8a8" stroke-width="2.5"/>
-        <text x="350" y="230" text-anchor="middle" fill="#eed8a8" font-size="11" font-family="JetBrains Mono, monospace">gullat · czasza</text>
-        <path d="M 460 220 Q 500 140 460 90" fill="none" stroke="#6ab4f5" stroke-width="2"/>
-        <text x="520" y="95" fill="#6ab4f5" font-size="11" font-family="JetBrains Mono, monospace">źródło</text>
+    <div class="viz-body" style="padding:1.6rem 1.2rem 1.2rem;">
+      <svg class="viz-svg" viewBox="0 0 640 700" height="620" role="img" aria-label="Diagram mechanizmu czerpania wody z Koheleta 12:6">
+        <defs>
+          <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#d4a854" stop-opacity="0.16"/>
+            <stop offset="100%" stop-color="#d4a854" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="waterGlow" cx="50%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#6ab4f5" stop-opacity="0.30"/>
+            <stop offset="55%" stop-color="#52d0b0" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="#52d0b0" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="shaftGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0c1428" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#030609" stop-opacity="0.75"/>
+          </linearGradient>
+          <linearGradient id="vesselFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#eed8a8" stop-opacity="0.14"/>
+            <stop offset="100%" stop-color="#eed8a8" stop-opacity="0.03"/>
+          </linearGradient>
+        </defs>
+
+        <!-- ambient glow behind wheel -->
+        <circle cx="320" cy="112" r="150" fill="url(#goldGlow)"/>
+
+        <!-- well shaft (trapezoid, perspective) -->
+        <polygon points="215,215 425,215 390,642 250,642" fill="url(#shaftGrad)" stroke="none"/>
+        <line x1="215" y1="215" x2="250" y2="642" stroke="rgba(160,185,255,0.16)" stroke-width="1"/>
+        <line x1="425" y1="215" x2="390" y2="642" stroke="rgba(160,185,255,0.16)" stroke-width="1"/>
+
+        <!-- well rim -->
+        <ellipse cx="320" cy="215" rx="105" ry="16" fill="none" stroke="var(--gold-dim)" stroke-width="1.5"/>
+        <ellipse cx="320" cy="219" rx="105" ry="16" fill="none" stroke="rgba(122,96,48,0.35)" stroke-width="1"/>
+
+        <!-- A-frame stand holding the wheel -->
+        <line x1="320" y1="112" x2="250" y2="215" stroke="var(--gold-dim)" stroke-width="3" stroke-linecap="round"/>
+        <line x1="320" y1="112" x2="390" y2="215" stroke="var(--gold-dim)" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- wheel (galgal) -->
+        <circle cx="320" cy="112" r="58" fill="none" stroke="var(--violet)" stroke-width="2.5"/>
+        <circle cx="320" cy="112" r="47" fill="none" stroke="var(--violet-dim)" stroke-width="1.2"/>
+        <g stroke="var(--violet-dim)" stroke-width="1.2">
+          <line x1="320" y1="65"  x2="320" y2="159"/>
+          <line x1="273" y1="112" x2="367" y2="112"/>
+          <line x1="287" y1="79"  x2="353" y2="145"/>
+          <line x1="287" y1="145" x2="353" y2="79"/>
+        </g>
+        <circle cx="320" cy="112" r="7" fill="var(--void)" stroke="var(--violet)" stroke-width="2"/>
+
+        <!-- cord: wheel -> bowl (twisted double line) -->
+        <path d="M 320 170 C 316 200, 324 220, 320 250 S 316 300, 320 322"
+              fill="none" stroke="var(--gold)" stroke-width="2"/>
+        <path d="M 324 170 C 320 200, 328 220, 324 250 S 320 300, 324 322"
+              fill="none" stroke="var(--gold-dim)" stroke-width="1"/>
+
+        <!-- bowl (gullat) -->
+        <path d="M 285 322 L 355 322 L 340 358 L 300 358 Z"
+              fill="url(#vesselFill)" stroke="var(--gold)" stroke-width="2" stroke-linejoin="round"/>
+        <ellipse cx="320" cy="322" rx="35" ry="7" fill="none" stroke="var(--gold)" stroke-width="1.8"/>
+
+        <!-- cord: bowl -> pitcher -->
+        <path d="M 320 358 C 316 390, 324 415, 320 440 S 316 460, 320 452"
+              fill="none" stroke="var(--gold)" stroke-width="2"/>
+        <path d="M 324 358 C 320 390, 328 415, 324 440 S 320 460, 324 452"
+              fill="none" stroke="var(--gold-dim)" stroke-width="1"/>
+
+        <!-- pitcher (dzban) -->
+        <path d="M 305 452 Q 296 452 296 465 L 296 468
+                 Q 288 480 290 502 Q 292 528 320 534 Q 348 528 350 502
+                 Q 352 480 344 468 L 344 465 Q 344 452 335 452 Z"
+              fill="url(#vesselFill)" stroke="var(--hebrew)" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M 344 466 Q 366 466 366 480" fill="none" stroke="var(--hebrew)" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="320" cy="452" rx="15" ry="4" fill="none" stroke="var(--hebrew)" stroke-width="1.5"/>
+
+        <!-- water source -->
+        <ellipse cx="320" cy="600" rx="82" ry="42" fill="url(#waterGlow)"/>
+        <g fill="none" stroke="var(--teal)" stroke-width="1.2" opacity="0.75">
+          <path d="M 268 592 q 13 -8 26 0 t 26 0 t 26 0"/>
+          <path d="M 268 608 q 13 -8 26 0 t 26 0 t 26 0"/>
+        </g>
+        <ellipse cx="320" cy="642" rx="70" ry="12" fill="none" stroke="var(--gold-dim)" stroke-width="1.2" opacity="0.6"/>
+
+        <!-- hairline fracture accents -->
+        <g stroke="var(--rose)" stroke-width="1.4" opacity="0.55" fill="none" stroke-linecap="round">
+          <path d="M 300 66 l 6 6 l -4 5 l 7 5"/>
+          <path d="M 330 182 l 5 6 l -5 4 l 6 6"/>
+          <path d="M 348 316 l 6 5 l -5 5 l 6 5"/>
+          <path d="M 300 478 l -6 5 l 6 5 l -5 6"/>
+        </g>
+
+        <!-- leader: galgal -->
+        <line x1="382" y1="112" x2="452" y2="112" stroke="var(--text-mute)" stroke-width="1" stroke-dasharray="2,3"/>
+        <circle cx="382" cy="112" r="2.5" fill="var(--violet)"/>
+        <text x="460" y="98"  fill="var(--hebrew)" font-size="19" font-family="Georgia, serif">גַּלְגַּל</text>
+        <text x="460" y="118" fill="var(--violet)" font-size="10.5" letter-spacing="0.14em" font-family="'JetBrains Mono',monospace">GALGAL</text>
+        <text x="460" y="134" fill="var(--text-mid)" font-size="11" font-style="italic" font-family="'EB Garamond',serif">koło — prowadzi sznur</text>
+
+        <!-- leader: chewel -->
+        <line x1="188" y1="242" x2="320" y2="242" stroke="var(--text-mute)" stroke-width="1" stroke-dasharray="2,3"/>
+        <circle cx="320" cy="242" r="2.5" fill="var(--gold)"/>
+        <text x="180" y="222" text-anchor="end" fill="var(--hebrew)" font-size="19" font-family="Georgia, serif">חֶבֶל</text>
+        <text x="180" y="242" text-anchor="end" fill="var(--gold)" font-size="10.5" letter-spacing="0.14em" font-family="'JetBrains Mono',monospace">CHEWEL</text>
+        <text x="180" y="258" text-anchor="end" fill="var(--text-mid)" font-size="11" font-style="italic" font-family="'EB Garamond',serif">sznur — trzyma naczynie</text>
+
+        <!-- leader: gullat -->
+        <line x1="358" y1="336" x2="452" y2="336" stroke="var(--text-mute)" stroke-width="1" stroke-dasharray="2,3"/>
+        <circle cx="358" cy="336" r="2.5" fill="var(--gold)"/>
+        <text x="460" y="322" fill="var(--hebrew)" font-size="19" font-family="Georgia, serif">גֻּלָּה</text>
+        <text x="460" y="342" fill="var(--gold)" font-size="10.5" letter-spacing="0.14em" font-family="'JetBrains Mono',monospace">GULLAT</text>
+        <text x="460" y="358" fill="var(--text-mid)" font-size="11" font-style="italic" font-family="'EB Garamond',serif">czasza — ten sam rdzeń co koło</text>
+
+        <!-- leader: dzban -->
+        <line x1="188" y1="490" x2="292" y2="490" stroke="var(--text-mute)" stroke-width="1" stroke-dasharray="2,3"/>
+        <circle cx="292" cy="490" r="2.5" fill="var(--hebrew)"/>
+        <text x="180" y="484" text-anchor="end" fill="var(--hebrew)" font-size="14" font-style="italic" font-family="'EB Garamond',serif">dzban</text>
+        <text x="180" y="500" text-anchor="end" fill="var(--text-mid)" font-size="11" font-style="italic" font-family="'EB Garamond',serif">czeka nad źródłem</text>
+
+        <!-- label: źródło -->
+        <text x="320" y="672" text-anchor="middle" fill="var(--teal)" font-size="10.5" letter-spacing="0.16em" font-family="'JetBrains Mono',monospace">ŹRÓDŁO</text>
       </svg>
     </div>
     <div class="viz-cap">To nie cztery psujące się przedmioty, lecz jeden mechanizm: sznur trzyma naczynie, koło prowadzi sznur, dzban czeka nad źródłem. Żaden element nie ma sensu osobno — rozpad całości zaczyna się nie od zniszczenia materii, lecz od zerwania więzi.</div>
